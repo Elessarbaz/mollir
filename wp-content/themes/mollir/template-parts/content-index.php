@@ -1,7 +1,7 @@
 <!--НАЧАЛО Услуги (подраздел главной)-->
 <div class="services" id="services">
 	<div class="uk-container uk-container-center">
-		<h2>Услуги</h2>
+		<a href="<?=get_term_link(2)?>"><h2>Услуги</h2></a>
 		<div class="uk-grid">
 			<?php
 			$services=query_posts(array('category_name'=>'services', 'numberposts'=>6, 'orderby'=>'rand'));
@@ -24,7 +24,7 @@
 <!--НАЧАЛО галерея подраздел главной)-->
 <div class="gallery" id="gallery">
 	<div class="uk-container uk-container-center">
-		<h2>ГАЛЕРЕЯ</h2>
+		<a href="<?=get_permalink(12)?>"><h2>ГАЛЕРЕЯ</h2></a>
 		<div class="data-uk-slider uk-slidenav-position" data-uk-slider="{autoplay: true}">
 			<div class="uk-slider-container">
 				<ul class="uk-slider uk-grid-medium uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-3 uk-grid-width-small-1-2">
@@ -81,7 +81,7 @@
 <!--НАЧАЛО Новости (подраздел главной)-->
 <div class="news" id="news">
 	<div class="uk-container uk-container-center">
-		<h2>Новости</h2>
+		<a href="<?=get_term_link(3)?>"><h2>Новости</h2></a>
 		<div class="uk-grid">
 			<?php
 			$services=query_posts(array('category_name'=>'news', 'numberposts'=>4, 'orderby'=>'rand'));

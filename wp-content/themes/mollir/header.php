@@ -51,7 +51,7 @@ if (is_front_page()) {$class='index';} else {
 					<span class="uk-hidden-small">/</span>
 					<a href="tel:<?=get_field('phone2',4)?>"><?=get_field('phone2',4)?></a>
 					<span class="uk-hidden-small">/</span>
-					<a href="mailto:<?=get_field('email',4)?>"><?=get_field('phone1',4)?></a>
+					<a href="mailto:<?=get_field('email',4)?>"><?=get_field('email',4)?></a>
 				</p>
 			</div>
 			<?php if (is_front_page()): ?>
@@ -85,7 +85,7 @@ if (is_front_page()) {$class='index';} else {
 						<?php $menu=wp_get_nav_menu_items('main');
 						foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent): $sub=sub_menu($menu,$val); ?>
 							<li <?php if ($sub) echo 'class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false"';?>>
-								<a href="<?=get_permalink(4).$val->url?>"  data-uk-smooth-scroll="{offset: 40}"><?=$val->title?></a>
+								<a href="<?=get_permalink(4).$val->url?>"><?=$val->title?></a>
 								<?php
 								if ($sub)
 								{?>
@@ -159,7 +159,7 @@ if (is_front_page()) {$class='index';} else {
 				<?php $menu=wp_get_nav_menu_items('main');
 				foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent){ $sub=sub_menu($menu,$val); ?>
 					<li <?php if ($sub) echo 'class="uk-parent" aria-expanded="false"';?>>
-						<a href="<?=get_permalink(4).$val->url?>"  data-uk-smooth-scroll><?=$val->title?></a>
+						<a href="<?=get_permalink(4).$val->url?>"><?=$val->title?></a>
 					</li>
 					<?php
 					if ($sub){?>
