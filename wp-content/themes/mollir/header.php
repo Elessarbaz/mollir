@@ -1,3 +1,15 @@
+<?php
+function sub_menu ($menu,$parent)
+{
+	$res = array();
+	foreach ($menu as $value) {
+		if ($value->menu_item_parent == $parent->ID) {
+			$res[]=$value;
+		}
+	}
+	return $res;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,28 +54,57 @@ if (is_front_page()) {$class='index';} else {
 					<a href="mailto:<?=get_field('email',4)?>"><?=get_field('phone1',4)?></a>
 				</p>
 			</div>
+			<?php if (is_front_page()): ?>
 			<nav class="uk-navbar" data-uk-sticky="{getWidthFrom:'.body', top:-200, animation: 'uk-animation-slide-top'}">
 				<ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
-					<li><a href="#mainSection" data-uk-smooth-scroll>Главная</a></li>
-					<li class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false">
-						<a href="#services" data-uk-smooth-scroll="{offset: 40}">Услуги</a>
-						<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0;">
-							<ul class="uk-nav uk-nav-navbar">
-								<li><a href="#">Услуга 1</a></li>
-								<li><a href="#">Услуга, ещё одна</a></li>
-								<li><a href="#">Услуга, ещё одна</a></li>
-								<li><a href="#">Услуга, и ещё одна</a></li>
-							</ul>
-						</div>
-					</li>
-					<li><a href="#gallery" data-uk-smooth-scroll="{offset: 40}">Галерея</a></li>
-					<li><a href="#news" data-uk-smooth-scroll="{offset: 40}">Новости</a></li>
-					<li><a href="#cerificates" data-uk-smooth-scroll="{offset: 40}">Сертификаты</a></li>
-					<li><a href="#reviews" data-uk-smooth-scroll="{offset: 40}">Отзывы</a></li>
-					<li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+					<?php $menu=wp_get_nav_menu_items('main');
+					foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent): $sub=sub_menu($menu,$val); ?>
+						<li <?php if ($sub) echo 'class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false"';?>>
+							<a href="<?=$val->url?>"  data-uk-smooth-scroll="{offset: 40}"><?=$val->title?></a>
+							<?php
+							if ($sub)
+							{?>
+								<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0;">
+									<ul class="uk-nav uk-nav-navbar">
+										<?php foreach ($sub as $value): ?>
+											<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+										<?php endforeach; ?>
+									</ul>
+								</div>
+								<?php
+							}
+							?>
+						</li>
+					<?php endif;} ?>
 				</ul>
 				<a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 			</nav>
+			<?php else: ?>
+			<nav class="uk-navbar" data-uk-sticky="{getWidthFrom:'.body', top:-200, animation: 'uk-animation-slide-top'}">
+					<ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
+						<?php $menu=wp_get_nav_menu_items('main');
+						foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent): $sub=sub_menu($menu,$val); ?>
+							<li <?php if ($sub) echo 'class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false"';?>>
+								<a href="<?=get_permalink(4).$val->url?>"  data-uk-smooth-scroll="{offset: 40}"><?=$val->title?></a>
+								<?php
+								if ($sub)
+								{?>
+									<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0;">
+										<ul class="uk-nav uk-nav-navbar">
+											<?php foreach ($sub as $value): ?>
+												<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+											<?php endforeach; ?>
+										</ul>
+									</div>
+									<?php
+								}
+								?>
+							</li>
+						<?php endif;} ?>
+					</ul>
+					<a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+				</nav>
+			<?php endif; ?>
 		</div>
 	</header>
 	<?php if(is_front_page()):?>
@@ -86,19 +127,57 @@ if (is_front_page()) {$class='index';} else {
 	</div>
 	<?php endif; ?>
 </div>
+<?php if (is_front_page()): ?>
 <div id="my-id" class="uk-offcanvas">
 	<div class="uk-offcanvas-bar">
 		<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-			<li><a href="#mainSection" data-uk-smooth-scroll>Главная</a></li>
-			<li><a href="#services" data-uk-smooth-scroll="{offset: 40}">Услуги</a></li>
-			<li><a href="#gallery" data-uk-smooth-scroll="{offset: 40}">Галерея</a></li>
-			<li><a href="#news" data-uk-smooth-scroll="{offset: 40}">Новости</a></li>
-			<li><a href="#cerificates" data-uk-smooth-scroll="{offset: 40}">Сертификаты</a></li>
-			<li><a href="#reviews" data-uk-smooth-scroll="{offset: 40}">Отзывы</a></li>
-			<li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+			<?php $menu=wp_get_nav_menu_items('main');
+			foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent){ $sub=sub_menu($menu,$val); ?>
+				<li <?php if ($sub) echo 'class="uk-parent" aria-expanded="false"';?>>
+					<a href="<?=$val->url?>"  data-uk-smooth-scroll><?=$val->title?></a>
+				</li>
+				<?php
+				if ($sub){?>
+					<li class="uk-parent" aria-expanded="false">
+						<a href="#"><?=$val->title?> список</a>
+						<ul class="uk-nav-sub">
+							<?php foreach ($sub as $value){ ?>
+								<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+							<?php }; ?>
+						</ul>
+					</li>
+				<?php }	?>
+
+			<?php }} ?>
 		</ul>
 	</div>
 </div>
+<?php else: ?>
+<div id="my-id" class="uk-offcanvas">
+		<div class="uk-offcanvas-bar">
+			<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+				<?php $menu=wp_get_nav_menu_items('main');
+				foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent){ $sub=sub_menu($menu,$val); ?>
+					<li <?php if ($sub) echo 'class="uk-parent" aria-expanded="false"';?>>
+						<a href="<?=get_permalink(4).$val->url?>"  data-uk-smooth-scroll><?=$val->title?></a>
+					</li>
+					<?php
+					if ($sub){?>
+						<li class="uk-parent" aria-expanded="false">
+							<a href="#"><?=$val->title?> список</a>
+							<ul class="uk-nav-sub">
+								<?php foreach ($sub as $value){ ?>
+									<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+								<?php }; ?>
+							</ul>
+						</li>
+					<?php }	?>
+
+				<?php }} ?>
+			</ul>
+		</div>
+	</div>
+<?php endif; ?>
 <!--КОНЕЦ Главный раздел включая хедер с навбаром-->
 
 <!--НАЧАЛО сине-черная декор полоска-->
