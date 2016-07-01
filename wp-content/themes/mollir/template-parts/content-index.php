@@ -180,6 +180,7 @@
 			',
 
 		),4); ?>
+	</div>
 
 		<!--<form action="" class="uk-grid">
 			<div class="uk-width-medium-1-2">
