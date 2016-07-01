@@ -43,12 +43,21 @@
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/slider.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/slideshow.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/lightbox.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/components/grid.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/scripts.js"></script>
+<script type='text/javascript' src="<?php bloginfo('template_directory') ?>/public/js/ug-theme-tiles.js"></script>
+<script>
+	//UIkit.grid($('[data-uk-grid]'), { 'colwidth'});
+</script>
 <script src="https://callback.blink.kz/resources/callback/js/mailer.js" ></script>
 <script>
 	var submitSMG = new BMModule();
 	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); $('.success-mail-text').html(success); $('.blink-mailer').hide(500);  $('.success-mail').show(500);  }, function(error) {});
+	jQuery("#gallery1").unitegallery({
+		tiles_type: "justified",
+	});
 </script>
+
 <?=get_field('google',4)?>
 <?=get_field('yandex',4)?>
 <?php wp_footer(); ?>

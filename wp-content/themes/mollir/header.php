@@ -24,6 +24,8 @@ function sub_menu ($menu,$parent)
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/slideshow.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/slidenav.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/styles.css">
+	<link rel='stylesheet' href='<?php bloginfo('template_directory') ?>/public/css/unite-gallery.css' type='text/css' />
+
 </head>
 <?php
 $class='';

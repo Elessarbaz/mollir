@@ -16,6 +16,24 @@
 		<?php the_content() ?>
 		</article>
 	</div>
+	<?php $gallery=pp_gallery_get(get_the_ID());
+	if($gallery):
+		?>
+		<div id="fh5co-gallery" data-section="gallery">
+			<div class="uk-container uk-container-center">
+					<div id="gallery1" class="">
+						<?php foreach($gallery as $galleryItem) : ?>
+							<a data-uk-lightbox="{group:'slider-group'}" href="<?=$galleryItem->url?>">
+								<img alt="<?=$galleryItem->alt?>"
+									 src="<?=$galleryItem->url?>"
+									 data-image="<?=$galleryItem->url?>">
+							</a>
+						<?php endforeach; ?>
+					</div>
+						<div style="margin-top: 40px;"></div>
+			</div>
+		</div>
+	<?php endif; ?>
 	<div class="prev-next uk-clearfix">
 		<?php previous_post_link('%link', '< Предыдущая', true); ?>
 
@@ -24,29 +42,7 @@
 </div>
 <!--КОНЕЦ одиночная статья -->
 
-<?php $gallery=pp_gallery_get(get_the_ID());
-if($gallery):
-	?>
-	<div id="fh5co-gallery" data-section="gallery">
-		<div class="container">
-			<div class="row hidden-sm hidden-xs">
-				<div class="col-md-12">
-					<div id="gallery-pp-oo" class="">
-						<?php foreach($gallery as $galleryItem) : ?>
-							<a href="<?=$galleryItem->url?>">
-								<img alt="<?=$galleryItem->alt?>"
-									 src="<?=$galleryItem->url?>"
-									 data-image="<?=$galleryItem->url?>"
-									 style="display:none">
-							</a>
-						<?php endforeach; ?>
-					</div>
-					<div style="margin-top: 40px;"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-<?php endif; ?>
+
 
 <!--НАЧАЛО оставить заявку консультация-->
 <div class="request uk-container uk-container-center" id="request">
