@@ -20,18 +20,18 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'mollir');
+define('DB_NAME', 'mollirkz_db');
 
 /** Имя пользователя MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'molli_user');
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', '7ut&Ah02');
 
 /** Имя сервера MySQL */
-define('DB_HOST', 'localhost');
-//blesk_admin
-//%S9Lo^&QgvpNa1@apy
+define('DB_HOST', 'srv-pleskdb15.ps.kz:3306');
+//moll_admin
+//X&D^o96#4z1TEg1PKA7JSfaU
 /** Кодировка базы данных для создания таблиц. */
 define('DB_CHARSET', 'utf8');
 
