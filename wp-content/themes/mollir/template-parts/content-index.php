@@ -107,9 +107,9 @@
 		<h2>Сертификат соответстивия</h2>
 		<div class="certificate-item">
 			<img src="<?=get_field('cerificates-image',4)?>">
-			<p>
+			<div>
 				<?=get_field('cerificates-text',4)?>
-			</p>
+			</div>
 		</div>
 	</div>
 </div>

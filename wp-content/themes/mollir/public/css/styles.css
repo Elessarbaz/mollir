@@ -394,11 +394,11 @@ footer {
     flex-flow: wrap;
     justify-content: center;
     align-items: center; }
-    .cerificates .certificate-item p {
+    .cerificates .certificate-item div {
       margin: 20px;
       text-align: justify; }
       @media (min-width: 768px) {
-        .cerificates .certificate-item p {
+        .cerificates .certificate-item div {
           text-align: left;
           flex: 0 0 350px;
           margin-left: 40px; } }
