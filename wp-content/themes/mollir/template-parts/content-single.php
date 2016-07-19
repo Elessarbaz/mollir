@@ -45,21 +45,23 @@
 
 
 <!--НАЧАЛО оставить заявку консультация-->
-<div class="request uk-container uk-container-center" id="request">
-	<div class="summary">
-		<h2 class="brand-underline"><?=get_field('rew_title',4)?></h2>
-		<p>
-			<?=get_field('rew_text',4)?>
-		</p>
-	</div>
-	<form action="" class="blink-mailer">
-		<input type="hidden" name="title" value="Обратная связь">
-		<input type="text" id="name" name="Имя" placeholder=" Имя">
-		<input type="tel" id="phoneNumber" name="Телефон" placeholder=" Телефон">
-		<input type="submit" value="Отправить">
-	</form>
-	<div class="success-mail-text">
-		
+<div class="request" id="request">
+	<div class="uk-container uk-container-center">
+		<div class="summary">
+			<h2 class="brand-underline"><?= get_field('rew_title', 4) ?></h2>
+			<p>
+				<?= get_field('rew_text', 4) ?>
+			</p>
+		</div>
+		<form action="" class="blink-mailer">
+			<input type="hidden" name="title" value="Обратная связь">
+			<input type="text" id="name" name="Имя" placeholder=" Имя">
+			<input type="tel" id="phoneNumber" name="Телефон" placeholder=" Телефон">
+			<input type="submit" value="Отправить">
+		</form>
+		<div class="success-mail-text">
+
+		</div>
 	</div>
 </div>
 <!--КОНЕЦ оставить заявку консультация-->

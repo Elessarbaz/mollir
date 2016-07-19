@@ -12,8 +12,7 @@
 	<div class="uk-grid">
 		<?php foreach (pp_gallery_get() as $image): ?>
 		<div class="uk-width-large-1-3 uk-width-medium-1-2 uk-width-small-1-1">
-			<a href="<?=$image->url?>" data-uk-lightbox="{group:'slider-group'}">
-				<img src="<?=$image->url?>">
+			<a href="<?=$image->url?>" style="background-image: url('<?=$image->url?>')" data-uk-lightbox="{group:'slider-group'}">
 				<span><?=$image->alt?></span>
 			</a>
 		</div>
@@ -35,21 +34,23 @@
 <!--КОНЕЦ pagination-->
 
 <!--НАЧАЛО оставить заявку консультация-->
-<div class="request uk-container uk-container-center" id="request">
-	<div class="summary">
-		<h2 class="brand-underline"><?=get_field('rew_title',4)?></h2>
-		<p>
-			<?=get_field('rew_text',4)?>
-		</p>
-	</div>
-	<form action="" class="blink-mailer">
-		<input type="hidden" name="title" value="Обратная связь">
-		<input type="text" id="name" name="Имя" placeholder=" Имя">
-		<input type="tel" id="phoneNumber" name="Телефон" placeholder=" Телефон">
-		<input type="submit" value="Отправить">
-	</form>
-	<div class="success-mail-text">
+<div class="request" id="request">
+	<div class="uk-container uk-container-center">
+		<div class="summary">
+			<h2 class="brand-underline"><?= get_field('rew_title', 4) ?></h2>
+			<p>
+				<?= get_field('rew_text', 4) ?>
+			</p>
+		</div>
+		<form action="" class="blink-mailer">
+			<input type="hidden" name="title" value="Обратная связь">
+			<input type="text" id="name" name="Имя" placeholder=" Имя">
+			<input type="tel" id="phoneNumber" name="Телефон" placeholder=" Телефон">
+			<input type="submit" value="Отправить">
+		</form>
+		<div class="success-mail-text">
 
+		</div>
 	</div>
 </div>
 <!--КОНЕЦ оставить заявку консультация-->
