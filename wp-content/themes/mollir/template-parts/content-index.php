@@ -4,12 +4,13 @@
 		<a href="<?=get_term_link(2)?>"><h2>Услуги</h2></a>
 		<div class="uk-grid">
 			<?php
-			$services=query_posts(array('category_name'=>'services', 'numberposts'=>6, 'orderby'=>'rand'));
+			$services=query_posts(array('category_name'=>'services', 'numberposts'=>6, 'order'=>'date', 'orderby'=>'ASC'));
 			foreach( $services as $post ) {
 				setup_postdata($post);
 				?>
 				<article class="uk-width-medium-1-2">
-					<h3 class="brand-underline"><a href="<?=get_permalink()?>"><?=get_the_title()?></a></h3>
+
+					<h3 class="brand-underline"><a href="<?=get_permalink()?>"><?=get_the_title()?></a><!--<span class="uk-text-small" >--><?/*=get_the_date()*/?></span></h3>
 					<p><?=get_the_content()?></p>
 				</article>
 				<?php

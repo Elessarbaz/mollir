@@ -7367,3 +7367,5 @@
 127.0.0.1 - - [01/Jul/2016:14:48:21 +0600] "POST /wp-admin/admin-ajax.php HTTP/1.1" 200 204 "http://mollir.tes/wp-admin/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 127.0.0.1 - - [01/Jul/2016:14:50:22 +0600] "POST /wp-admin/admin-ajax.php HTTP/1.1" 200 204 "http://mollir.tes/wp-admin/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 127.0.0.1 - - [01/Jul/2016:14:59:22 +0600] "POST /wp-admin/admin-ajax.php HTTP/1.1" 200 204 "http://mollir.tes/wp-admin/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+127.0.0.1 - - [04/Jul/2016:11:43:11 +0600] "GET / HTTP/1.1" 500 608 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+127.0.0.1 - - [04/Jul/2016:11:43:12 +0600] "GET /favicon.ico HTTP/1.1" 200 203 "http://mollir.tes/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
