@@ -21,7 +21,6 @@
 	</div>
 </div>
 <!--КОНЕЦ Услуги (подраздел главной)-->
-
 <!--НАЧАЛО галерея подраздел главной)-->
 <div class="gallery" id="gallery">
 	<div class="uk-container uk-container-center">
