@@ -10,7 +10,9 @@
 <!--НАЧАЛО одиночная статья -->
 <div class="single-article-section uk-container uk-container-center">
 	<h1><?=get_the_title()?></h1>
+	<?php if(get_the_post_thumbnail_url()): ?>
 	<img src="<?=get_the_post_thumbnail_url()?>" class="img-big">
+	<?php endif; ?>
 	<div class="text-section">
 		<article>
 		<?php the_content() ?>
