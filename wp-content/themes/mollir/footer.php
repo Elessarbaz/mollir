@@ -11,6 +11,7 @@
 				<p>
 					<a class="phone-number" href="tel:<?=get_field('phone1',4)?>"><?=get_field('phone1',4)?></a>
 					<a class="phone-number" href="<?=get_field('phone2',4)?>"><?=get_field('phone2',4)?></a>
+					<a class="phone-number" href="<?=get_field('phone3',4)?>"><?=get_field('phone3',4)?></a>
 				</p>
 			</div>
 			<div class="email-container">

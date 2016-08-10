@@ -53,6 +53,8 @@ if (is_front_page()) {$class='index';} else {
 					<span class="uk-hidden-small">/</span>
 					<a href="tel:<?=get_field('phone2',4)?>"><?=get_field('phone2',4)?></a>
 					<span class="uk-hidden-small">/</span>
+					<a href="tel:<?=get_field('phone3',4)?>"><?=get_field('phone3',4)?></a>
+					<span class="uk-hidden-small">/</span>
 					<a href="mailto:<?=get_field('email',4)?>"><?=get_field('email',4)?></a>
 				</p>
 			</div>
