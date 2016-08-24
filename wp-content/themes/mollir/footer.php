@@ -17,16 +17,7 @@
 			<div class="email-container">
 				<p><a href="<?=get_field('address',4)?>" class="email"><?=get_field('address',4)?></a></p>
 			</div>
-		</div>
-		<div class="work-time-and-social">
-			<div class="work-time">
-				<h4>Режим работы:</h4>
-				<p>
-					<?=get_field('work-time',4)?>
-				</p>
-			</div>
 			<div class="social">
-				<h4>Мы в соц. сетях:</h4>
 				<a href="<?=get_field('facebook-account',4)?>">
 					<img src="<?php bloginfo('template_directory') ?>/public/img/footer-fb.png" alt="Facebook">
 				</a>
@@ -34,6 +25,27 @@
 					<img src="<?php bloginfo('template_directory') ?>/public/img/footer-google.png" alt="Google">
 				</a>
 			</div>
+		</div>
+		<div class="work-time-and-request">
+			<div class="work-time">
+				<h4>Режим работы:</h4>
+				<p>
+					<?=get_field('work-time',4)?>
+				</p>
+			</div>
+
+			<!--НАЧАЛО Форма обратной связи -->
+			<div class="summary">
+				<p><?= get_field('rew_title', 4) ?></p>
+			</div>
+			<form action="" class="blink-mailer">
+				<input type="hidden" name="title" value="Обратная связь">
+				<input type="text" id="name" name="Имя" placeholder=" Имя">
+				<input type="tel" id="phoneNumber" name="Телефон" placeholder=" Телефон">
+				<input type="submit" value="Отправить">
+			</form>
+			<div class="success-mail-text"></div>
+			<!--КОНЕЦ Форма обратной связи -->
 		</div>
 	</div>
 </footer>

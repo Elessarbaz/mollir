@@ -56,6 +56,10 @@ h3 {
   }
 }
 
+.img {
+  height: 200px;
+  background: 50% 50%/cover;
+}
 .brand-underline::after {
   @media (min-width: 760px) {
     content: "";
@@ -338,7 +342,8 @@ footer {
       }
     }
 
-    .work-time-and-social {
+    .work-time-and-request {
+      text-align: center;
       .social {
         a {
           display: inline-block;
@@ -347,7 +352,20 @@ footer {
           margin-left: 10px;
         }
       }
-
+      .summary {
+        margin-top: 10px;
+        color: white;
+      }
+      input {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto 15px;
+        padding: 5px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 3px;
+      }
     }
   }
 }
@@ -371,33 +389,40 @@ footer {
 
 /* НАЧАЛО services (подраздел главной)*/
 .services {
-  padding: 30px 0;
-
+  padding: 35px 0;
   h2 {
     text-align: center;
-    text-transform: uppercase;
-
-    margin-bottom: 0;
   }
-  h3 {
-    font-size: 20px;
-    text-align: left;
-    margin-bottom: 5px;
-
-    &.brand-underline::after {
-      display: none;
-    }
-
+  li {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 35px;
     a {
-      display: block;
-      color: $main-color;
-    }
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      color: white;
+      &:hover {
+        color: $main-color;
       }
-  article {
-    text-align: justify;
-    margin-top: 30px;
-    p {
-      margin-top: 5px;
+    }
+    .img {
+      height: 200px;
+      background: 50% 50%/cover;
+    }
+    .text-section {
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      background: #ddd;
+      padding: 0;
+      text-align: center;
+      background: $main-color;
+      h3 {
+        color: white;
+        padding: 15px;
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -461,7 +486,7 @@ footer {
 
 /* НАЧАЛО request оставить заявку консультация */
 .request {
-  background: 50% 50%/cover url("../img/feedback-background.jpg");
+  background: #e4e4e4;
   font-size: 18px;
   padding: 20px;
   @media (min-width: 768px) {

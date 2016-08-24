@@ -10,14 +10,15 @@
 <!--НАЧАЛО одиночная статья -->
 <div class="single-article-section uk-container uk-container-center">
 	<h1><?=get_the_title()?></h1>
-	<?php if(get_the_post_thumbnail_url()): ?>
-	<img src="<?=get_the_post_thumbnail_url()?>" class="img-big">
-	<?php endif; ?>
-	<div class="text-section">
-		<article>
-		<?php the_content() ?>
+		<article class="uk-grid">
+			<div class="uk-width-medium-1-3">
+				<img src="<?=get_the_post_thumbnail_url()?>" class="img-big">
+			</div>
+			<div class="uk-width-medium-2-3">
+				<?php the_content() ?>
+			</div>
 		</article>
-	</div>
+
 	<?php $gallery=pp_gallery_get(get_the_ID());
 	if($gallery):
 		?>

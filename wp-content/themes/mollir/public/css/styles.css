@@ -40,6 +40,10 @@ h3 {
     h3 {
       font-size: 26px; } }
 
+.img {
+  height: 200px;
+  background: 50% 50%/cover; }
+
 @media (min-width: 760px) {
   .brand-underline::after {
     content: "";
@@ -255,10 +259,24 @@ footer {
     footer .uk-container .contacts .phone-number {
       display: block;
       margin-top: 5px; }
-    footer .uk-container .work-time-and-social .social a {
-      display: inline-block; }
-    footer .uk-container .work-time-and-social .social a + a {
-      margin-left: 10px; }
+    footer .uk-container .work-time-and-request {
+      text-align: center; }
+      footer .uk-container .work-time-and-request .social a {
+        display: inline-block; }
+      footer .uk-container .work-time-and-request .social a + a {
+        margin-left: 10px; }
+      footer .uk-container .work-time-and-request .summary {
+        margin-top: 10px;
+        color: white; }
+      footer .uk-container .work-time-and-request input {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto 15px;
+        padding: 5px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 3px; }
 
 /* КОНЕЦ footer */
 /* НАЧАЛО сине-черная декор полоска */
@@ -276,25 +294,35 @@ footer {
 /* КОНЕЦ сине-черная декор полоска */
 /* НАЧАЛО services (подраздел главной)*/
 .services {
-  padding: 30px 0; }
+  padding: 35px 0; }
   .services h2 {
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 0; }
-  .services h3 {
-    font-size: 20px;
-    text-align: left;
-    margin-bottom: 5px; }
-    .services h3.brand-underline::after {
-      display: none; }
-    .services h3 a {
-      display: block;
-      color: #2a4650; }
-  .services article {
-    text-align: justify;
-    margin-top: 30px; }
-    .services article p {
-      margin-top: 5px; }
+    text-align: center; }
+  .services li {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 35px; }
+    .services li a {
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      color: white; }
+      .services li a:hover {
+        color: #2a4650; }
+    .services li .img {
+      height: 200px;
+      background: 50% 50%/cover; }
+    .services li .text-section {
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      background: #ddd;
+      padding: 0;
+      text-align: center;
+      background: #2a4650; }
+      .services li .text-section h3 {
+        color: white;
+        padding: 15px;
+        margin-bottom: 0; }
 
 /* КОНЕЦ services (подраздел главной)*/
 /* НАЧАЛО gallery (подраздел главной)*/
@@ -335,7 +363,7 @@ footer {
 /* КОНЕЦ gallery (подраздел главной)*/
 /* НАЧАЛО request оставить заявку консультация */
 .request {
-  background: 50% 50%/cover url("../img/feedback-background.jpg");
+  background: #e4e4e4;
   font-size: 18px;
   padding: 20px; }
   @media (min-width: 768px) {

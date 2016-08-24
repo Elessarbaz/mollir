@@ -1,26 +1,33 @@
-<!--НАЧАЛО Услуги (подраздел главной)-->
-<div class="services" id="services">
+
+<!--НАЧАЛО Услуги-->
+<div class="services"  id="services">
 	<div class="uk-container uk-container-center">
 		<a href="<?=get_term_link(2)?>"><h2>Услуги</h2></a>
-		<div class="uk-grid">
+		<ul class="uk-grid uk-grid-width-large-1-2 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
 			<?php
 			$services=query_posts(array('category_name'=>'services', 'numberposts'=>6, 'order'=>'date', 'orderby'=>'ASC'));
 			foreach( $services as $post ) {
-				setup_postdata($post);
-				?>
-				<article class="uk-width-medium-1-2">
-
-					<h3 class="brand-underline"><a href="<?=get_permalink()?>"><?=get_the_title()?></a><!--<span class="uk-text-small" >--><?/*=get_the_date()*/?></span></h3>
-					<p><?=get_the_content()?></p>
-				</article>
-				<?php
+			setup_postdata($post);
+			?>
+				<li>
+					<a href="<?=get_permalink()?>">
+						<div class="img" style="background-image: url(<?php the_post_thumbnail_url()?>)">
+						</div>
+						<div class="text-section">
+							<h3><?=get_the_title()?></span></h3>
+						</div>
+					</a>
+				</li>
+			<?php
 			}
 			wp_reset_query();
 			?>
-		</div>
+		</ul>
 	</div>
 </div>
-<!--КОНЕЦ Услуги (подраздел главной)-->
+<!--КОНЕЦ Услуги-->
+
+
 <!--НАЧАЛО галерея подраздел главной)-->
 <div class="gallery" id="gallery">
 	<div class="uk-container uk-container-center">
@@ -54,28 +61,6 @@
 	</div>
 </div>
 <!--КОНЕЦ галерея подраздел главной)-->
-
-<!--НАЧАЛО оставить заявку консультация-->
-<div class="request" id="request">
-	<div class="uk-container uk-container-center">
-		<div class="summary">
-			<h2 class="brand-underline"><?= get_field('rew_title', 4) ?></h2>
-			<p>
-				<?= get_field('rew_text', 4) ?>
-			</p>
-		</div>
-		<form action="" class="blink-mailer">
-			<input type="hidden" name="title" value="Обратная связь">
-			<input type="text" id="name" name="Имя" placeholder=" Имя">
-			<input type="tel" id="phoneNumber" name="Телефон" placeholder=" Телефон">
-			<input type="submit" value="Отправить">
-		</form>
-		<div class="success-mail-text">
-
-		</div>
-	</div>
-</div>
-<!--КОНЕЦ оставить заявку консультация-->
 
 
 <!--НАЧАЛО Новости (подраздел главной)-->
