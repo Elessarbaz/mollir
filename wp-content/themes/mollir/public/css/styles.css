@@ -466,37 +466,39 @@ footer {
     @media (min-width: 760px) {
       .reviews .data-uk-slider {
         padding: 0 70px; } }
-    .reviews .data-uk-slider li .content-wrapper {
-      background: 50% 50%/100% 100% url("../img/review-backround.png");
-      padding: 25px 35px 25px 25px;
-      font-size: 14px;
-      line-height: 1.6; }
-      .reviews .data-uk-slider li .content-wrapper .name {
-        font-size: 18px;
-        text-transform: uppercase; }
-        .reviews .data-uk-slider li .content-wrapper .name::after {
-          margin-left: auto;
-          margin-right: auto; }
-      .reviews .data-uk-slider li .content-wrapper::before {
+    .reviews .data-uk-slider ul.uk-slider {
+      display: flex; }
+      .reviews .data-uk-slider ul.uk-slider li .content-wrapper {
+        background: 50% 50%/100% 100% url("../img/review-backround.png");
+        padding: 25px 35px 25px 25px;
+        font-size: 14px;
+        line-height: 1.6; }
+        .reviews .data-uk-slider ul.uk-slider li .content-wrapper .name {
+          font-size: 18px;
+          text-transform: uppercase; }
+          .reviews .data-uk-slider ul.uk-slider li .content-wrapper .name::after {
+            margin-left: auto;
+            margin-right: auto; }
+        .reviews .data-uk-slider ul.uk-slider li .content-wrapper::before {
+          content: url("../img/review-pin.png");
+          position: absolute;
+          left: 30px;
+          top: 15px; }
+        .reviews .data-uk-slider ul.uk-slider li .content-wrapper::after {
+          content: url("../img/review-pin.png");
+          position: absolute;
+          right: 30px;
+          top: 15px; }
+      .reviews .data-uk-slider ul.uk-slider li::before {
         content: url("../img/review-pin.png");
         position: absolute;
         left: 30px;
-        top: 15px; }
-      .reviews .data-uk-slider li .content-wrapper::after {
+        bottom: 20px; }
+      .reviews .data-uk-slider ul.uk-slider li::after {
         content: url("../img/review-pin.png");
         position: absolute;
         right: 30px;
-        top: 15px; }
-    .reviews .data-uk-slider li::before {
-      content: url("../img/review-pin.png");
-      position: absolute;
-      left: 30px;
-      bottom: 20px; }
-    .reviews .data-uk-slider li::after {
-      content: url("../img/review-pin.png");
-      position: absolute;
-      right: 30px;
-      bottom: 20px; }
+        bottom: 20px; }
     .reviews .data-uk-slider .uk-slidenav {
       display: block;
       width: 25px;

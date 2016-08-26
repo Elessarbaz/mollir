@@ -91,7 +91,9 @@
 	<div class="uk-container uk-container-center">
 		<h2>Сертификат соответстивия</h2>
 		<div class="certificate-item">
-			<img src="<?=get_field('cerificates-image',4)?>">
+			<a href="<?=get_field('cerificates-image',4)?>" data-uk-lightbox>
+				<img src="<?=get_field('cerificates-image',4)?>">
+			</a>
 			<div>
 				<?=get_field('cerificates-text',4)?>
 			</div>

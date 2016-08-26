@@ -616,44 +616,47 @@ footer {
       padding: 0 70px;
     }
 
-    li {
-      .content-wrapper {
-        background: 50% 50%/100% 100% url("../img/review-backround.png");
-        padding: 25px 35px 25px 25px;
-        font-size: 14px;
-        line-height: 1.6;
-        .name {
-          font-size: 18px;
-          text-transform: uppercase;
+    ul.uk-slider {
+      display: flex;
+      li {
+        .content-wrapper {
+          background: 50% 50%/100% 100% url("../img/review-backround.png");
+          padding: 25px 35px 25px 25px;
+          font-size: 14px;
+          line-height: 1.6;
+          .name {
+            font-size: 18px;
+            text-transform: uppercase;
+            &::after {
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+          &::before {
+            content: url("../img/review-pin.png");
+            position: absolute;
+            left: 30px;
+            top: 15px;
+          }
           &::after {
-            margin-left: auto;
-            margin-right: auto;
+            content: url("../img/review-pin.png");
+            position: absolute;
+            right: 30px;
+            top: 15px;
           }
         }
         &::before {
           content: url("../img/review-pin.png");
           position: absolute;
           left: 30px;
-          top: 15px;
+          bottom: 20px;
         }
         &::after {
           content: url("../img/review-pin.png");
           position: absolute;
           right: 30px;
-          top: 15px;
+          bottom: 20px;
         }
-      }
-      &::before {
-        content: url("../img/review-pin.png");
-        position: absolute;
-        left: 30px;
-        bottom: 20px;
-      }
-      &::after {
-        content: url("../img/review-pin.png");
-        position: absolute;
-        right: 30px;
-        bottom: 20px;
       }
     }
 
