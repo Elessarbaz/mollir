@@ -17,14 +17,14 @@
 			<div class="email-container">
 				<p><a href="<?=get_field('address',4)?>" class="email"><?=get_field('address',4)?></a></p>
 			</div>
-			<div class="social">
+			<!--div class="social">
 				<a href="<?=get_field('facebook-account',4)?>">
 					<img src="<?php bloginfo('template_directory') ?>/public/img/footer-fb.png" alt="Facebook">
 				</a>
 				<a href="<?=get_field('google-account',4)?>">
 					<img src="<?php bloginfo('template_directory') ?>/public/img/footer-google.png" alt="Google">
 				</a>
-			</div>
+			</div-->
 		</div>
 		<div class="work-time-and-request">
 			<div class="work-time">
